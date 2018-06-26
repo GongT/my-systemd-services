@@ -1,0 +1,11 @@
+[Match]
+Name=enp?s?
+
+[Network]
+Description=Bridged Connection
+DHCP=no
+LinkLocalAddressing=no
+IPv6AcceptRA=no
+Bridge=bridge0
+RequiredForOnline=yes
+

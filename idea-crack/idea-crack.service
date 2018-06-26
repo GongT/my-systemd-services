@@ -1,0 +1,7 @@
+[Unit]
+After=idea-license-server.service
+Requires=idea-license-server.service
+
+[Service]
+ExecStart=/lib/systemd/systemd-socket-proxyd 127.0.0.1:41018
+

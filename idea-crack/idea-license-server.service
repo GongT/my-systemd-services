@@ -1,0 +1,13 @@
+[Unit]
+Description=idea IDE dummy license server
+Before=idea-crack.service
+
+[Service]
+Type=simple
+ExecStart=BINARY_PATH/IntelliJIDEALicenseServer_linux_amd64 -l 127.0.0.1 -p 41018 -u GongT
+ExecStartPost=/bin/sleep 1
+Restart=no
+
+[Install]
+WantedBy=multi-user.target
+

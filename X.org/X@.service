@@ -1,0 +1,26 @@
+[Unit]
+Description=X11 daemon on tty%I
+Documentation=man:Xorg(1)
+After=plymouth-quit-wait.service
+Before=graphical.target
+Conflicts=getty@%i.service
+Conflicts=rescue.service
+
+[Service]
+Environment=DISPLAY=%I
+EnvironmentFile=-/etc/sysconfig/Xorg
+ExecStart=/usr/bin/X :%I vt%I $OPTIONS
+ExecStartPost=-/usr/bin/systemctl start xfwm@%I.service
+Type=simple
+Restart=always
+RestartSec=0
+UtmpIdentifier=%I
+TTYPath=/dev/%I
+TTYReset=yes
+TTYVHangup=yes
+TTYVTDisallocate=yes
+
+[Install]
+WantedBy=graphical.target
+DefaultInstance=10
+

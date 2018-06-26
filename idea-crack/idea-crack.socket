@@ -1,0 +1,10 @@
+[Unit]
+Description=idea IDE dummy license server activation socket
+
+[Socket]
+Service=idea-crack.service
+ListenStream=0.0.0.0:41017
+
+[Install]
+WantedBy=sockets.target
+

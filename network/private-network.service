@@ -1,0 +1,14 @@
+[Unit]
+Description=Configure static routes for private network
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=oneshot
+RemainAfterExit=true
+ExecStartPre=/usr/lib/systemd/systemd-networkd-wait-online --interface=bridge0
+ExecStart=/sbin/ip route add 169.254.0.0/16 dev bridge0
+ExecStop=/sbin/ip route del 169.254.0.0/16 dev bridge0
+
+[Install]
+WantedBy=network.target

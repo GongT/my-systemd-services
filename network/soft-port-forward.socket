@@ -1,0 +1,10 @@
+[Unit]
+Description=soft port forward from *:7070 to 10.6.0.2:1080
+
+[Socket]
+# Service=soft-port-forward.service
+ListenStream=0.0.0.0:7070
+Accept=true
+
+[Install]
+WantedBy=sockets.target

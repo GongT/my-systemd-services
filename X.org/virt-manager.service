@@ -1,0 +1,18 @@
+[Unit]
+Description=virt-manager tty10
+Documentation=man:virt-manager
+Requires=X@10.service libvirtd.service
+After=X@10.service libvirtd.service
+PartOf=X@10.service
+
+[Service]
+Environment=DISPLAY=:10
+ExecStart=/usr/bin/virt-manager
+Type=forking
+Restart=always
+RestartSec=0
+
+[Install]
+WantedBy=graphical.target
+DefaultInstance=10
+

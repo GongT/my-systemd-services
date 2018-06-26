@@ -1,0 +1,11 @@
+[Match]
+Name=bridge0
+
+[Network]
+Description=The Bridged Network
+DHCP=yes
+LinkLocalAddressing=no
+IPv6AcceptRA=no
+RequiredForOnline=yes
+
+

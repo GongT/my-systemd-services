@@ -1,0 +1,7 @@
+[Unit]
+Description=pass stdin to 10.6.0.2:1080
+
+[Service]
+# ExecStart=/bin/nc -v 10.6.0.2 1080
+# ExecStart=/bin/nc -v 127.0.0.1 6666
+ExecStart=/bin/cat

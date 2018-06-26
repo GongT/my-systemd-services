@@ -1,0 +1,18 @@
+[Unit]
+Description=xfwm on tty%I
+Documentation=man:xfwm
+# Requires=X@%I.service
+# PartOf=X@%I.service
+
+[Service]
+Environment=DISPLAY=:%I
+# ExecStartPre=/usr/bin/systemctl start X@%I.service
+ExecStart=/usr/bin/xfwm4 --replace
+Type=simple
+Restart=always
+RestartSec=0
+
+[Install]
+WantedBy=X@%I.service
+DefaultInstance=10
+
