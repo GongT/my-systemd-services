@@ -1,0 +1,13 @@
+[Unit]
+Description=Create WiFi ap config file
+Requires=sys-subsystem-net-devices-wifi-ap.device
+After=sys-subsystem-net-devices-wlp1s0.device
+
+[Service]
+Type=oneshot
+RemainAfterExit=no
+ExecStart=/usr/sbin/iw phy phy0 interface add wifi-ap type managed
+
+[Install]
+WantedBy=network.target
+

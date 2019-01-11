@@ -1,0 +1,15 @@
+[Unit]
+Description=Create virtual WiFi interface
+Requires=sys-subsystem-net-devices-wlp1s0.device
+After=sys-subsystem-net-devices-wlp1s0.device
+
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+
+ExecStart=/usr/sbin/iw phy phy0 interface add wifi-ap type ap
+ExecStop=/usr/sbin/iw dev wifi-ap del
+
+[Install]
+WantedBy=network.target
+

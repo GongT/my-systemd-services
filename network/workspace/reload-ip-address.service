@@ -1,0 +1,15 @@
+[Unit]
+Description=When bridge0 change, restart this service
+BindsTo=sys-subsystem-net-devices-bridge0.device
+BindsTo=sys-subsystem-net-devices-enp3s0.device
+BindsTo=sys-subsystem-net-devices-enp4s0.device
+After=sys-subsystem-net-devices-bridge0.device
+
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+ExecStart=/bin/bash "$SCRIPT_ROOT/reload-ip-address.sh"
+
+[Install]
+WantedBy=multi-user.target
+

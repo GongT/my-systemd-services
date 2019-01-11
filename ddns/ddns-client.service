@@ -1,0 +1,11 @@
+[Unit]
+Description=Dynamic DNS updator
+Requires=network-online.target
+After=network-online.target
+
+[Service]
+Type=oneshot
+RemainAfterExit=false
+Environment=
+ExecStartPre=/bin/sh -c ""
+ExecStart=/bin/sh -c ""

@@ -1,14 +1,13 @@
 [Match]
-Name=bridge0
+Name=enp4s0
 
 [Network]
-Description=The Bridged Network
-DHCP=yes
+Description=Bridged Connection
+DHCP=no
 LinkLocalAddressing=no
 IPv6AcceptRA=no
-Domains=private.work.gongt.me
+Bridge=bridge0
 
-IPMasquerade=yes
 IPForward=yes
 
 [Link]

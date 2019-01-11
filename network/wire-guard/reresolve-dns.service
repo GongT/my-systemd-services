@@ -1,0 +1,9 @@
+[Unit]
+Description=re-resolve dns and restart systemd-networkd if need
+Requires=systemd-networkd.service
+After=network-online.target
+
+[Service]
+Type=oneshot
+RemainAfterExit=false
+ExecStart=/bin/bash -e /etc/wireguard/reload-script.sh

@@ -1,0 +1,14 @@
+[Match]
+Name=enp*u*
+
+[Network]
+Description=USB Network
+DHCP=yes
+LinkLocalAddressing=no
+IPv6AcceptRA=no
+
+IPForward=yes
+
+[Link]
+RequiredForOnline=no
+
