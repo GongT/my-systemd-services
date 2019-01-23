@@ -1,0 +1,17 @@
+[Unit]
+Description=OpenSSH SFTP client
+Documentation=man:sftp(1)
+After=network.target ssh.service
+Wants=ssh.service
+
+[Service]
+Type=simple
+ExecStartPre=/usr/bin/mkdir -p /mnt/home-data
+ExecStart=/usr/bin/sshfs -f -o reconnect,auto_cache,allow_other,auto_unmount,kernel_cache,directport=21 /mnt/home-data 10.100.0.1:/data
+ExecStop=/usr/bin/umount /mnt/home-data
+KillMode=process
+Restart=on-failure
+RestartSec=10s
+
+[Install]
+WantedBy=multi-user.target

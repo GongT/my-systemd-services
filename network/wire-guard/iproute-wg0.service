@@ -5,5 +5,9 @@ After=network-online.target
 
 [Service]
 Type=oneshot
-RemainAfterExit=no
-ExecStart=/bin/bash -e /etc/wireguard/reload-script.sh
+RemainAfterExit=yes
+ExecStart=/usr/sbin/ip route add
+ExecStop=
+
+[Install]
+WantedBy=network.target

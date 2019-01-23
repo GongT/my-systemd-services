@@ -1,12 +1,12 @@
 [Unit]
-Description=re-resolve dns and restart systemd-networkd if need
+Description=re-resolve dns and restart systemd-networkd if need timer
 Requires=network-online.target
 After=network-online.target
 
 [Timer]
 OnBootSec=5min
 OnUnitActiveSec=5min
-OnUnitInactiveSec=30s
+OnUnitInactiveSec=5min
 
 [Install]
 WantedBy=timers.target
