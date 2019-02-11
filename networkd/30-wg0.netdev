@@ -4,11 +4,11 @@ Kind = wireguard
 Description = Wireguard
 
 [WireGuard]
-PrivateKey = 0E9ABvpAq26BdKquRxLYVpm9/eCc4o42F3CBy/DqPEo=
+PrivateKey = *******
 
 [WireGuardPeer]
 PublicKey = 3tiqpnAjGSlRnonFUzvuMbnuZFTh+lBWFq0AnLyhigI=
-PresharedKey = bv2QJH4xnvXQuacWtoES/WHDifPbaygK03l+MI9agAg=
+PresharedKey = *******
 AllowedIPs = 10.100.0.0/24
 Endpoint = home.gongt.me:2816
 PersistentKeepalive = 25
