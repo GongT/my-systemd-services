@@ -4,6 +4,8 @@ Requires=systemd-networkd.service
 After=network-online.target
 
 [Service]
+Environment="TZ=Asia/Chongqing"
 Type=oneshot
 RemainAfterExit=no
+ExecStartPre=/usr/bin/date "+%%F %%T"
 ExecStart=/bin/bash -e /etc/wireguard/reload-script.sh
