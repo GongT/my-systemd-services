@@ -12,8 +12,12 @@ PUBLIC_KEY="$(wg show wg0 | grep 'peer:' | grep -oE '\S+$')"
 CURRENT="$(wg show wg0 | grep 'endpoint' | grep -oE '\b([0-9]+\.)+[0-9]+\b')"
 echo "Current ip address is: $CURRENT."
 
+echo -n "Using $RESOLVER as resolver: "
+RESOLVER_IP=$(nslookup "$RESOLVER" | grep 'Address: ' | grep -oE '\b([0-9]+\.)+[0-9]+\b')
+echo "${RESOLVER_IP}."
+
 echo -n "Resolving ip address: "
-IP_ADDR="$(nslookup "$HOSTNAME" "$RESOLVER" | grep 'Address: ' | grep -oE '\b([0-9]+\.)+[0-9]+\b')"
+IP_ADDR="$(nslookup "$HOSTNAME" "$RESOLVER_IP" | grep 'Address: ' | grep -oE '\b([0-9]+\.)+[0-9]+\b')"
 echo "$IP_ADDR."
 
 if [ "$CURRENT" = "$IP_ADDR" ] ; then

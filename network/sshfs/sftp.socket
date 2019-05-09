@@ -1,0 +1,12 @@
+[Unit]
+Description=OpenSSH SFTP daemon
+Documentation=man:sftp(1)
+After=network.target ssh.service
+Wants=ssh.service
+
+[Socket]
+ListenStream=2121
+Accept=true
+Service=sftp.service
+
+
