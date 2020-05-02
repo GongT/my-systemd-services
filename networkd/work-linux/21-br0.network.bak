@@ -1,0 +1,35 @@
+[Match]
+Name=br0
+
+[Network]
+Description=The Bridged Network
+DHCP=yes
+LinkLocalAddressing=no
+IPv6AcceptRA=no
+Domains=private.work.gongt.me
+# Address=192.168.189.46/24
+IPMasquerade=yes
+IPForward=yes
+
+[Link]
+RequiredForOnline=yes
+MACAddress=28:AF:2A:00:CF:D9
+# MTUBytes=1480
+Unmanaged=no
+
+[Route]
+GatewayOnlink=yes
+# Metric=1
+
+[DHCP]
+UseDNS=yes
+UseNTP=yes
+UseMTU=yes
+SendHostname=yes
+Hostname=gongt-linux
+UseDomains=yes
+UseRoutes=yes
+CriticalConnection=yes
+ClientIdentifier=duid
+RouteMetric=1
+

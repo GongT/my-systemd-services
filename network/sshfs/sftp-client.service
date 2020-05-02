@@ -12,6 +12,8 @@ ExecStop=/usr/bin/umount /mnt/home-data
 KillMode=process
 Restart=on-failure
 RestartSec=10s
+TimeoutStopSec=20s
 
 [Install]
 WantedBy=multi-user.target
+

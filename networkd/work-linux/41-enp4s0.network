@@ -1,0 +1,27 @@
+[Match]
+Name=enp4s0
+
+[Network]
+Description=Bridged Connection
+DHCP=yes
+LinkLocalAddressing=no
+IPv6AcceptRA=no
+# Bridge=br0
+Address=192.168.189.46/24
+IPForward=yes
+
+[Link]
+RequiredForOnline=yes
+
+[DHCP]
+UseDNS=yes
+UseNTP=yes
+UseMTU=yes
+SendHostname=yes
+Hostname=gongt-linux
+UseDomains=yes
+UseRoutes=yes
+CriticalConnection=yes
+ClientIdentifier=duid
+RouteMetric=1
+

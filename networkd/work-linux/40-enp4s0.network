@@ -1,0 +1,14 @@
+[Match]
+Name=enp3s0
+
+[Network]
+Description=Normal Ethernet Connection
+DHCP=yes
+LinkLocalAddressing=no
+IPv6AcceptRA=no
+
+# IPForward=yes
+
+[Link]
+RequiredForOnline=no
+

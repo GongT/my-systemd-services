@@ -1,4 +1,4 @@
 [NetDev]
-Name=bridge0
+Name=br0
 Kind=bridge
 

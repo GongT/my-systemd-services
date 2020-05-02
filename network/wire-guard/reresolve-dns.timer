@@ -5,8 +5,8 @@ After=network-online.target
 
 [Timer]
 OnBootSec=20sec
-OnUnitActiveSec=5min
-OnUnitInactiveSec=5min
+OnUnitActiveSec=1min
+OnUnitInactiveSec=1min
 
 [Install]
 WantedBy=timers.target

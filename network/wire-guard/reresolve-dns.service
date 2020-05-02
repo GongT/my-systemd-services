@@ -1,7 +1,7 @@
 [Unit]
 Description=re-resolve dns and restart systemd-networkd if need
 Requires=systemd-networkd.service
-After=network-online.target
+After=network-online.target dnsmasq.service
 
 [Service]
 Environment="TZ=Asia/Chongqing"
@@ -9,3 +9,6 @@ Type=oneshot
 RemainAfterExit=no
 ExecStartPre=/usr/bin/date "+%%F %%T"
 ExecStart=/bin/bash -e /etc/wireguard/reload-script.sh
+
+[Install]
+WantedBy=default.target
